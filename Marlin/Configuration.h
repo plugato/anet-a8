@@ -861,18 +861,18 @@
 #endif
 
 // Mechanical endstop with COM to ground and NC to Signal uses "false" here (most common setup).
-#define X_MIN_ENDSTOP_INVERTING true       // Set to true to invert the logic of the endstop.
-#define Y_MIN_ENDSTOP_INVERTING true       // Set to true to invert the logic of the endstop.
+#define X_MIN_ENDSTOP_INVERTING true        // Set to true to invert the logic of the endstop.
+#define Y_MIN_ENDSTOP_INVERTING true        // Set to true to invert the logic of the endstop.
 #define Z_MIN_ENDSTOP_INVERTING false       // Set to true to invert the logic of the endstop.
-#define I_MIN_ENDSTOP_INVERTING false      // Set to true to invert the logic of the endstop.
-#define J_MIN_ENDSTOP_INVERTING false      // Set to true to invert the logic of the endstop.
-#define K_MIN_ENDSTOP_INVERTING false      // Set to true to invert the logic of the endstop.
-#define X_MAX_ENDSTOP_INVERTING false      // Set to true to invert the logic of the endstop.
-#define Y_MAX_ENDSTOP_INVERTING false      // Set to true to invert the logic of the endstop.
-#define Z_MAX_ENDSTOP_INVERTING false      // Set to true to invert the logic of the endstop.
-#define I_MAX_ENDSTOP_INVERTING false      // Set to true to invert the logic of the endstop.
-#define J_MAX_ENDSTOP_INVERTING false      // Set to true to invert the logic of the endstop.
-#define K_MAX_ENDSTOP_INVERTING false      // Set to true to invert the logic of the endstop.
+#define I_MIN_ENDSTOP_INVERTING false       // Set to true to invert the logic of the endstop.
+#define J_MIN_ENDSTOP_INVERTING false       // Set to true to invert the logic of the endstop.
+#define K_MIN_ENDSTOP_INVERTING false       // Set to true to invert the logic of the endstop.
+#define X_MAX_ENDSTOP_INVERTING false       // Set to true to invert the logic of the endstop.
+#define Y_MAX_ENDSTOP_INVERTING false       // Set to true to invert the logic of the endstop.
+#define Z_MAX_ENDSTOP_INVERTING false       // Set to true to invert the logic of the endstop.
+#define I_MAX_ENDSTOP_INVERTING false       // Set to true to invert the logic of the endstop.
+#define J_MAX_ENDSTOP_INVERTING false       // Set to true to invert the logic of the endstop.
+#define K_MAX_ENDSTOP_INVERTING false       // Set to true to invert the logic of the endstop.
 #define Z_MIN_PROBE_ENDSTOP_INVERTING false // Set to true to invert the logic of the probe.
 
 /**
@@ -1235,12 +1235,12 @@
 */
 #define NOZZLE_TO_PROBE_OFFSET \
   {                            \
-    0, 50, -1                   \
+    -40, -20, 0                  \
   }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
-#define PROBING_MARGIN 10
+#define PROBING_MARGIN 30
 
 // X and Y axis travel speed (mm/min) between probes
 #define XY_PROBE_FEEDRATE (100 * 60)
@@ -1430,6 +1430,13 @@
 #define Y_BED_SIZE 220
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
+//#define X_MAX_POS 250
+//#define X_MIN_POS -13
+//#define Y_MAX_POS 220
+//#define Y_MIN_POS -13
+//#define Z_MAX_POS 250
+//#define Z_MIN_POS 0
+
 #define X_MIN_POS -4
 #define Y_MIN_POS -6
 #define Z_MIN_POS 0
@@ -1743,7 +1750,7 @@
 #if ENABLED(LEVEL_BED_CORNERS)
 #define LEVEL_CORNERS_INSET_LFRB \
   {                              \
-    30, 30, 30, 30               \
+    10, 10, 10, 10               \
   }                              // (mm) Left, Front, Right, Back insets
 #define LEVEL_CORNERS_HEIGHT 0.0 // (mm) Z height of nozzle at leveling points
 #define LEVEL_CORNERS_Z_HOP 4.0  // (mm) Z height of nozzle between leveling points
